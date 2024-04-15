@@ -5,6 +5,7 @@ cargo deb --release # --target=someTarget
 
 ### package to arch
 ```sh
+updpkgsums # part of `pacman-contrib` package
 makepkg -si
 ```
 

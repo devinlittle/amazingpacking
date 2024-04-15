@@ -1,0 +1,26 @@
+# Template file for 'amazingpacking'
+pkgname=amazingpacking
+version=0.0.1
+revision=1
+build_style=cargo
+build_helper="rust"
+hostmakedepends="pandoc"
+short_desc="Gyatt"
+maintainer="Devin LIttle <devinlittlee@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://gyatt.com"
+distfiles="https://github.com/pixthehe/amazingpacking/archive/refs/tags/v${version}.tar.gz"
+checksum=b0b59a7bdd7536941fac210ca25d30f904657f906aa2c01411fb390d4bdcd139
+
+post_install() {
+	#vcompletion completions/bash/eza bash
+	#vcompletion completions/fish/eza.fish fish
+	#vcompletion completions/zsh/_eza zsh
+
+	for manpage in amazingpacking.1; do
+		pandoc --standalone -f markdown -t man doc/${manpage}.md > ${manpage}
+		vman ${manpage}
+	done
+
+	#vlicense LICENCE
+}

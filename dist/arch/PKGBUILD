@@ -1,14 +1,16 @@
-# Maintainer: Devin Little <devinlittlee@gmail.com> 
+# Maintainer: Devin Little <devinlittlee@gmail.com>
+# Based off of eza PKGBUILD
 pkgname=amazingpacking
 pkgver=0.0.1
 pkgrel=1
 pkgdesc="Gyatt"
 url="https://github.com/"
-arch=("x86_64", "aarch64")
+arch=("x86_64" "aarch64")
 license=("GPL-3.0-or-later")
 provides=('amazingpacking')
 makedepends=("cargo" "pandoc")
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/pixthehe/amazingpacking/archive/v${pkgver}.tar.gz")
+sha256sums=('b3f6fbcda10ffc31f3114752c95c92b9d46e4fce9a976d333791457557384463')
 
 prepare() {
   cd "${pkgname}-${pkgver}"
@@ -20,7 +22,7 @@ build() {
   cargo build --frozen --release
   mkdir -p target/man
   for manpage in amazingpacking.1; do
-    pandoc --standalone -f markdown -t man "man/${manpage}.md" > "target/man/${manpage}"
+    pandoc --standalone -f markdown -t man "res/${manpage}.md" > "target/man/${manpage}"
   done
 }
 
@@ -45,4 +47,3 @@ package() {
 
   #install -Dm644 LICEN?E "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
-
