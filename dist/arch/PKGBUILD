@@ -1,0 +1,48 @@
+# Maintainer: Devin Little <devinlittlee@gmail.com> 
+pkgname=amazingpacking
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Gyatt"
+url="https://github.com/"
+arch=("x86_64", "aarch64")
+license=("GPL-3.0-or-later")
+provides=('amazingpacking')
+makedepends=("cargo" "pandoc")
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/pixthehe/amazingpacking/archive/v${pkgver}.tar.gz")
+
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  cargo build --frozen --release
+  mkdir -p target/man
+  for manpage in amazingpacking.1; do
+    pandoc --standalone -f markdown -t man "man/${manpage}.md" > "target/man/${manpage}"
+  done
+}
+
+check() {
+  cd "${pkgname}-${pkgver}"
+  cargo test --frozen
+}
+
+
+package() {
+  cd "${pkgname}-${pkgver}"
+  install -Dm755 "target/release/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+
+  # install completions
+  #install -Dm644 "completions/bash/${pkgname}" -t "${pkgdir}/usr/share/bash-completion/completions"
+  #install -Dm644 "completions/zsh/_${pkgname}" -t "${pkgdir}/usr/share/zsh/site-functions/"
+  #install -Dm644 "completions/fish/${pkgname}.fish" -t "${pkgdir}/usr/share/fish/vendor_completions.d"
+
+  # install man pages
+  install -Dm644 target/man/*.1 -t "${pkgdir}/usr/share/man/man1"
+  #install -Dm644 target/man/*.5 -t "${pkgdir}/usr/share/man/man5"
+
+  #install -Dm644 LICEN?E "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
+
