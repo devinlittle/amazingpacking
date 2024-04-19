@@ -4,7 +4,7 @@ src_prepare() {
         default
 
         echo "$(pwd)"
-        cp -r ../bevy-template-main/* . || die
+        cp -r ../amazingpacking-master/* . || die
 }
 
 src_configure() {
