@@ -1,0 +1,1 @@
+cat ./addtofile.sh >> *.ebuild

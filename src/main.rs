@@ -12,5 +12,12 @@ struct Cli {
 fn main() {
     let args = Cli::parse();
 
-    println!("pattern: {:?}, path: {:?}", args.pattern, args.path)
+    println!("pattern: {:?}, path: {:?}", args.pattern, args.path);
+
+    if args.pattern.to_string() == "test" {
+        println!("Good Little Boy i love little boys and ");
+        if args.path.to_string_lossy() == "glossy" {
+            println!("Best of both worlds");
+        }
+    }
 }
