@@ -1,2 +1,5 @@
+Requirements:
+* pycargoebuild
+
 pycargoebuild ../../
 cat ./addtofile.ebuild >> amazingpacking-*

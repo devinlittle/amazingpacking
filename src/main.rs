@@ -15,7 +15,7 @@ fn main() {
     println!("pattern: {:?}, path: {:?}", args.pattern, args.path);
 
     if args.pattern.to_string() == "test" {
-        println!("Good Little Boy i love little boys and ");
+        println!("Bazinga!");
         if args.path.to_string_lossy() == "glossy" {
             println!("Best of both worlds");
         }

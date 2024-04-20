@@ -2,6 +2,7 @@
 name = "amazingpacking"
 version = "0.0.1"
 edition = "2021"
+license = "GPL-3.0-or-later"
 
 
 [package.metadata.deb]
@@ -15,7 +16,7 @@ depends = "$auto"
 section = "utility"
 priority = "optional"
 assets = [
-    ["target/release/cargo-deb", "usr/bin/", "755"],
+    ["target/release/amazingpacking", "usr/bin/", "755"],
     ["./res/amazingpacking.1", "usr/share/man/man1/amazingpacking.1", "644"],
 ]
 
