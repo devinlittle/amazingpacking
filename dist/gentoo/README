@@ -1,2 +1,2 @@
 pycargoebuild ../../
-cat ./addtofile.ebuild >> amazingpacking*.ebuild
+cat ./addtofile.ebuild >> amazingpacking-*
