@@ -3,7 +3,25 @@ name = "amazingpacking"
 version = "0.0.1"
 edition = "2021"
 
+
+[package.metadata.deb]
+maintainer = "Devin Little <devinlittlee@gmail.com>"
+copyright = "2024, Devin Little <devinlittlee@gmail.com>"
+license-file = ["LICENSE", "4"]
+extended-description = """\
+A simple subcommand for the Cargo package manager for \
+building Debian packages from Rust projects."""
+depends = "$auto"
+section = "utility"
+priority = "optional"
+assets = [
+    ["target/release/cargo-deb", "usr/bin/", "755"],
+    ["./res/amazingpacking.1", "usr/share/man/man1/amazingpacking.1", "644"],
+]
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 clap = { version = "4.5.4", features = ["derive"] }
+
+
