@@ -1,4 +1,4 @@
-BDEPEND+="app-text/pandoc"
+BDEPEND="virtual/pandoc"
 SRC_URI+="https://gitlab.devinlittle.net/devinlittle/amazingpacking/-/archive/master/amazingpacking-master.tar.gz"
 
 
