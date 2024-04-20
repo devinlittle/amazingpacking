@@ -18,7 +18,7 @@ post_install() {
 	#vcompletion completions/zsh/_eza zsh
 
 	for manpage in amazingpacking.1; do
-		pandoc --standalone -f markdown -t man doc/${manpage}.md > ${manpage}
+		pandoc --standalone -f markdown -t man res/${manpage}.md > ${manpage}
 		vman ${manpage}
 	done
 

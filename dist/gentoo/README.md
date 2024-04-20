@@ -1,1 +1,4 @@
-cat ./addtofile.sh >> *.ebuild
+```bash
+pycargoebuild ../../
+cat ./addtofile.ebuild >> amazingpacking*.ebuild
+```
