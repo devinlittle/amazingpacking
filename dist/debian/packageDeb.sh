@@ -4,7 +4,7 @@ for manpage in ./res/amazingpacking.1; do
 done;
 
 cargo deb
-# cargo deb --target=x85_64-unkown-linux-gnu
+# cargo deb --target=x86_64-unkown-linux-gnu
 rm ./res/amazingpacking.1
 
-echo "Build for debian!"
+echo "Built for debian!"
