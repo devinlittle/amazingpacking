@@ -3,7 +3,7 @@
 pkgname=amazingpacking
 pkgver=0.0.1
 pkgrel=1
-pkgdesc="Gyatt"
+pkgdesc="idk what i said for the last file so just imagine i said that instead of this :wink:"
 url="https://github.com/"
 arch=("x86_64" "aarch64")
 license=("GPL-3.0-or-later")
@@ -22,7 +22,7 @@ build() {
   cargo build --frozen --release
   mkdir -p target/man
   for manpage in amazingpacking.1; do
-    pandoc --standalone -f markdown -t man "res/${manpage}.md" > "target/man/${manpage}"
+    pandoc --standalone -f markdown -t man "res/${manpage}.md" >"target/man/${manpage}"
   done
 }
 
@@ -30,7 +30,6 @@ check() {
   cd "${pkgname}-${pkgver}"
   cargo test --frozen
 }
-
 
 package() {
   cd "${pkgname}-${pkgver}"

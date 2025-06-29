@@ -5,7 +5,7 @@ revision=1
 build_style=cargo
 build_helper="rust"
 hostmakedepends="pandoc"
-short_desc="Gyatt"
+short_desc="testpackage"
 maintainer="Devin Little <devinlittlee@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://gyatt.com"
@@ -13,9 +13,9 @@ distfiles="https://github.com/pixthehe/amazingpacking/archive/refs/tags/v${versi
 checksum=b0b59a7bdd7536941fac210ca25d30f904657f906aa2c01411fb390d4bdcd139
 
 post_install() {
-	#vcompletion completions/bash/eza bash
-	#vcompletion completions/fish/eza.fish fish
-	#vcompletion completions/zsh/_eza zsh
+	#vcompletion completions/bash/blahblah bash
+	#vcompletion completions/fish/blahblah.fish fish
+	#vcompletion completions/zsh/_blahblah zsh
 
 	for manpage in amazingpacking.1; do
 		pandoc --standalone -f markdown -t man res/${manpage}.md > ${manpage}
