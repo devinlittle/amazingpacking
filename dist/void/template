@@ -9,7 +9,7 @@ short_desc="testpackage"
 maintainer="Devin Little <devinlittlee@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://gyatt.com"
-distfiles="https://github.com/pixthehe/amazingpacking/archive/refs/tags/v${version}.tar.gz"
+distfiles="https://github.com/devinlittle/amazingpacking/archive/refs/tags/v${version}.tar.gz"
 checksum=b0b59a7bdd7536941fac210ca25d30f904657f906aa2c01411fb390d4bdcd139
 
 post_install() {

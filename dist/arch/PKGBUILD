@@ -4,12 +4,12 @@ pkgname=amazingpacking
 pkgver=0.0.1
 pkgrel=1
 pkgdesc="idk what i said for the last file so just imagine i said that instead of this :wink:"
-url="https://github.com/"
+url="https://devinlittle.net/"
 arch=("x86_64" "aarch64")
 license=("GPL-3.0-or-later")
 provides=('amazingpacking')
 makedepends=("cargo" "pandoc")
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/pixthehe/amazingpacking/archive/v${pkgver}.tar.gz")
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/devinlittle/amazingpacking/archive/v${pkgver}.tar.gz")
 sha256sums=('b3f6fbcda10ffc31f3114752c95c92b9d46e4fce9a976d333791457557384463')
 
 prepare() {

@@ -1,6 +1,5 @@
 BDEPEND="virtual/pandoc"
-SRC_URI+="https://gitlab.devinlittle.net/devinlittle/amazingpacking/-/archive/master/amazingpacking-master.tar.gz"
-
+SRC_URI+="https://github.com/devinlittle/amazingpacking/archive/refs/heads/master.zip"
 
 src_prepare() {
   default
@@ -16,7 +15,7 @@ src_configure() {
 
 src_install() {
   cargo_src_install
-  
-  pandoc --standalone -f markdown -t man ./res/amazingpacking.1.md > amazingpacking.1 
+
+  pandoc --standalone -f markdown -t man ./res/amazingpacking.1.md >amazingpacking.1
   doman ./amazingpacking.1
 }
