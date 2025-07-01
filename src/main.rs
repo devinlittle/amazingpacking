@@ -12,7 +12,7 @@ struct Cli {
 fn main() {
     let args = Cli::parse();
 
-    println!("pattern: {:?}, path: {:?}", args.pattern, args.path);
+    println!("p????attern: {:?}, path: {:?}", args.pattern, args.path);
 
     if args.pattern.to_string() == "test" {
         println!("Bazinga!");
